@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cek Khodam</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+input {
+    padding: 10px;
+    margin: 10px 0;
+    width: 80%;
+}
+
+button {
+    padding: 10px 15px;
+    cursor: pointer;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cek Khodam Anda</h1>
+        <input type="text" id="nameInput" placeholder="Masukkan nama Anda">
+        <button id="checkButton">Cek Khodam</button>
+        <p id="result"></p>
+    </div>
+    <script>
+const khodamTypes = [
+    'Kucing Jemping',
+    'Uler Kadut',
+    'Kunmer',
+    'Monyet',
+    'Macan Terbang',
+    'Keranda Terbang',
+    'GTA SAN ANDREAS',
+    'jembut terbang',
+    'aerok ntreettt',
+    'tronton muso',
+    'hino dutro',
+    'beat mberr',
+    'sempak firaun',
+    'kondom dajal',
+    'kecoa bunting',
+    'tobrut baik',
+    'tobrut jahat',
+    'vario mberrr',
+    'asolole icikiwir',
+    'boti',
+    'monyet bunting',
+    'kanjut badak'
+];
+
+document.getElementById('checkButton').addEventListener('click', function() {
+    const name = document.getElementById('nameInput').value;
+    const resultElement = document.getElementById('result');
+
+    if (name) {
+        const khodamFound = Math.random() < 0.5; 
+        const khodamType = khodamTypes[Math.floor(Math.random() * khodamTypes.length)];
+
+        if (khodamFound) {
+            resultElement.textContent = `${name}, ${khodamType}.`;
+        } else {
+            resultElement.textContent = `${name}, khodam Anda tidak ditemukan.`;
+        }
+    } else {
+        resultElement.textContent = 'Silakan masukkan nama Anda.';
+    }
+});
+    </script>
+</body>
+</html>
